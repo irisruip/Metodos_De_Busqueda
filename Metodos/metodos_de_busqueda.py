@@ -11,21 +11,8 @@ graph = {
     "I": []
 }
 
-# Función para el método de Escalada Simple
-def simple_hill_climbing(graph, start, goals):
-    visited = []
-    current = start
-    while current not in goals:
-        visited.append(current)
-        neighbors = graph[current]
-        if not neighbors:
-            break  # Si no hay vecinos, terminamos
-        current = neighbors[0][0]  # Selección del primer vecino (izquierda a derecha)
-    visited.append(current)
-    return visited
-
 # Función para el método de Escalada por Máxima Pendiente
-def steepest_ascent_hill_climbing(graph, start, goals):
+def simple_hill_climbing(graph, start, goals):
     visited = []
     current = start
     while current not in goals:
@@ -37,6 +24,22 @@ def steepest_ascent_hill_climbing(graph, start, goals):
         current = min(neighbors, key=lambda x: x[1])[0]
     visited.append(current)
     return visited
+
+
+# Función para el método de Escalada Simple
+def steepest_ascent_hill_climbing(graph, start, goals):
+    visited = []
+    current = start
+    while current not in goals:
+        visited.append(current)
+        neighbors = graph[current]
+        if not neighbors:
+            break  # Si no hay vecinos, terminamos
+        current = neighbors[0][0]  # Selección del primer vecino (izquierda a derecha)
+    visited.append(current)
+    return visited
+
+
 
 # Nodo inicial y nodos meta
 start_node = "A"
