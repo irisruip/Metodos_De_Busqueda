@@ -11,7 +11,7 @@ graph = {
     "I": []
 }
 
-# Función para el método de Escalada por Máxima Pendiente
+# Función para el método de Escalada simple
 def simple_hill_climbing(graph, start, goals):
     visited = []
     current = start
@@ -26,7 +26,7 @@ def simple_hill_climbing(graph, start, goals):
     return visited
 
 
-# Función para el método de Escalada Simple
+# Función para el método de Escalada por Maxima Pendiente
 def steepest_ascent_hill_climbing(graph, start, goals):
     visited = []
     current = start
